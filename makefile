@@ -5,5 +5,6 @@ all:
 
 
 clean:
-	find . -name \*.o -o -name \*.a | xargs rm -f
-	rm -f test/test-geoip-isp
+	$(MAKE) clean -C libGeoIP
+	$(MAKE) clean -C test
+	$(MAKE) clean -C tools
