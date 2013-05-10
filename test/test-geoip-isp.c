@@ -35,7 +35,7 @@ int main (int argc, char* argv[]) {
 		if (!strcmp(argv[1],"gen"))
 			generate = 1;
 
-	gi = GeoIP_open("../data/GeoIPISP.dat", GEOIP_STANDARD);
+	gi = GeoIP_open("GeoIPISP.dat", GEOIP_STANDARD);
 
 	if (gi == NULL) {
 		fprintf(stderr, "Error opening database\n");

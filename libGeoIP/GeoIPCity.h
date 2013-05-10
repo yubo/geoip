@@ -21,14 +21,13 @@
 #ifndef GEOIPCITY_H
 #define GEOIPCITY_H
 
-#include <GeoIP.h>
+#include "GeoIP.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #define  GEOIP_UNKNOWN_CONF  ( 0x7f )
-#define  GEOIP_UNKNOWN_ACCURACY_RADIUS  ( 0x3ff )
 
 typedef struct GeoIPRecordTag {
 	char *country_code;
@@ -46,9 +45,7 @@ typedef struct GeoIPRecordTag {
 	int area_code;
 	int charset;
 	char *continent_code;
-        /* confidence factor for Country/Region/City/Postal */
-        unsigned char country_conf, region_conf, city_conf, postal_conf;
-        int accuracy_radius;
+        int netmask;	
 } GeoIPRecord;
 
 GeoIPRecord * GeoIP_record_by_ipnum (GeoIP* gi, unsigned long ipnum);

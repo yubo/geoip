@@ -1,1 +1,5 @@
 cscope.*
+tmp
+*.o
+*.a
+*.so
